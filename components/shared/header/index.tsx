@@ -3,6 +3,7 @@ import { APP_NAME } from "@/lib/constants";
 import { ShoppingCart, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ModeToggle } from "./ModeToggle";
 
 export default function Header() {
   return (
@@ -14,8 +15,9 @@ export default function Header() {
             <Image src="/images/logo.svg" alt={`${APP_NAME} logo`} width={48} height={48} priority={true} />
             <span className="hidden md:block font-bold text-2xl">{APP_NAME}</span>
           </Link>
-          {/* car + login button */}
+          {/* theme toggle + cart + login button */}
           <div className="space-x-2">
+            <ModeToggle/>
             <Button asChild variant="outline">
               <Link href='/cart'>
                 <ShoppingCart /> Cart
