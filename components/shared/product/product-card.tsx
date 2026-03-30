@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import ProductPrice from "./product-price";
 
 export default function ProductCard({product}: {product: any}) {
   return <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -12,7 +13,7 @@ export default function ProductCard({product}: {product: any}) {
       <CardTitle className="text-primary">{product.name}</CardTitle>
       <div className="flex justify-between items-center mt-4">
         <div>{product.rating}</div>
-        {product.stock > 0 ? <div>{product.price}</div> : <div className="text-destructive">Out of stock</div>}
+        {product.stock > 0 ? <ProductPrice value={product.price}/> : <div className="text-destructive">Out of stock</div>}
       </div>
     </CardHeader>
   </Card>
