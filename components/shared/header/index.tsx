@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { APP_NAME } from "@/lib/constants";
-import { ShoppingCart, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { ModeToggle } from "./ModeToggle";
+import Menu from "./menu";
+import { OffcanvasMenu } from "./offcanvas-menu";
 
 export default function Header() {
   return (
@@ -16,19 +15,8 @@ export default function Header() {
             <span className="hidden md:block font-bold text-2xl">{APP_NAME}</span>
           </Link>
           {/* theme toggle + cart + login button */}
-          <div className="space-x-2">
-            <ModeToggle/>
-            <Button asChild variant="outline">
-              <Link href='/cart'>
-                <ShoppingCart /> Cart
-              </Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href='/login'>
-                <User /> Login
-              </Link>
-            </Button>
-          </div>
+          <Menu/>
+          <OffcanvasMenu/>
         </div>
       </div>
     </header>
