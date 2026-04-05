@@ -10,7 +10,9 @@ export default function ProductCard({product}: {product: any}) {
     </Link>
     <CardHeader >
       <div className="text-muted-foreground">{product.brand}</div>
+      <Link href={`product/${product.slug}`}>
       <CardTitle className="text-primary">{product.name}</CardTitle>
+      </Link>
       <div className="flex justify-between items-center mt-4">
         <div>{product.rating}</div>
         {product.stock > 0 ? <ProductPrice value={product.price}/> : <div className="text-destructive">Out of stock</div>}
